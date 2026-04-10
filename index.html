@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyangorora Banana - Premium Quality Kisii Bananas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #f39c12;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #f1c40f;
+            color: #f1c40f;
+        }
+        
+        .btn-outline:hover {
+            background-color: #f1c40f;
+            color: #2c3e50;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #27ae60;
+            font-size: 2.2rem;
+        }
+        
+        .section-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #f1c40f, #27ae60);
+            margin: 0 auto 30px;
+            border-radius: 2px;
+        }
+        
+        section {
+            padding: 80px 20px;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: #27ae60;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #f1c40f;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #f1c40f;
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* ===== MISSION SECTION ===== */
+        .mission {
+            background-color: #fff;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .mission-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .mission-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .mission-icon {
+            font-size: 2.5rem;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        
+        .mission-item h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        /* ===== GOALS SECTION ===== */
+        .goals {
+            background-color: #ecf0f1;
+        }
+        
+        .goals-container {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .goal-item {
+            margin-bottom: 35px;
+            padding-left: 30px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .goal-item h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .goal-item p {
+            margin-bottom: 10px;
+        }
+        
+        /* ===== TEAM SECTION ===== */
+        .team {
+            background-color: #fff;
+        }
+        
+        .principles {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .principles h3 {
+            color: #27ae60;
+            margin-bottom: 25px;
+        }
+        
+        .principles ul {
+            list-style: none;
+            display: inline-block;
+            text-align: left;
+        }
+        
+        .principles ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .principles ul li:before {
+            content: '✓';
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid #27ae60;
+            display: block;
+        }
+        
+        .team-member h3 {
+            color: #27ae60;
+            margin: 15px 0 5px;
+        }
+        
+        .team-member p {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+        
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: ''';
+            font-family: Georgia, serif;
+            font-size: 100px;
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            color: rgba(241, 196, 15, 0.2);
+        }
+        
+        .stars {
+            color: #f1c40f;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        
+        .testimonial-author span {
+            display: block;
+            font-weight: normal;
+            font-size: 0.9rem;
+            color: #ecf0f1;
+            margin-top: 5px;
+        }
+        
+        /* ===== CTA SECTION ===== */
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+        }
+        
+        .cta h2 {
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            gap: 30px;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 180px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #f1c40f;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+        }
+        
+        /* ===== INVESTMENT ANNOUNCEMENT ===== */
+        .investment-announcement {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 40px 0;
+        }
+        
+        .investment-announcement h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f1c40f;
+        }
+        
+        .investment-announcement p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .investment-announcement a {
+            color: #f1c40f;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid #f1c40f;
+            transition: all 0.3s ease;
+        }
+        
+        .investment-announcement a:hover {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #1a252f;
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #f1c40f;
+            font-size: 1.4rem;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #f1c40f;
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #f1c40f;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #f1c40f;
+            color: #2c3e50;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 30px;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80%;
+                text-align: center;
+                margin: 10px 0;
+            }
+            
+            section {
+                padding: 60px 20px;
+            }
+            
+            .goals-container {
+                padding: 30px 20px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .investment-announcement h2 {
+                font-size: 1.6rem;
+            }
+            
+            .investment-announcement p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-banana"></i>
+                Nyangorora Banana
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Premium Quality Kisii Bananas</h1>
+            <p>Transforming livelihoods through fair trade and sustainable banana processing. Popularizing Kisii bananas across Africa, the Middle East and beyond.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Explore Products</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Announcement Section -->
+    <div class="investment-announcement">
+        <div class="container">
+            <h2>Investment Opportunity</h2>
+            <p>Nyangorora Banana Processors Limited has been accepted into the EquityPilot program of <a href="https://www.fastercapital.com" target="_blank">FasterCapital</a> and is seeking a capital of $100,000.</p>
+        </div>
+    </div>
+
+    <!-- Mission & Values Section -->
+    <section id="about" class="mission">
+        <div class="container">
+            <h2 class="section-title">Our Mission & Values</h2>
+            <div class="section-divider"></div>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">Achieving economic growth for Kenya's banana value chain through commercialization and fair trade.</p>
+            
+            <div class="mission-grid">
+                <div class="mission-item">
+                    <div class="mission-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Employment</h3>
+                    <p>Providing professional growth and income opportunities for underemployed youth and women in Kisii County.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Honesty</h3>
+                    <p>Demands openness and transparency, which enhances accountability and paves the way for growth.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Fair Trade</h3>
+                    <p>Our direct partnerships ensure farmers receive fair compensation while delivering premium products to you.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Stewardship</h3>
+                    <p>Believes that caring for the environment means efficient and mindful use of natural resources.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>From farm to table, we maintain rigorous quality standards at every stage of production.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Goals Section -->
+    <section class="goals">
+        <div class="container">
+            <h2 class="section-title">Our Strategic Goals</h2>
+            <div class="section-divider"></div>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">Driving sustainable growth in Kenya's banana value chain</p>
+            
+            <div class="goals-container">
+                <div class="goal-item">
+                    <h3>Sustainable Income</h3>
+                    <p>Improve and sustain income while maintaining low cost production</p>
+                    <p><strong>Market Expansion:</strong> Increase distribution to East Africa and Middle East markets</p>
+                </div>
+                <div class="goal-item">
+                    <h3>Production Growth</h3>
+                    <p>Expand production capacity with new facilities and equipment</p>
+                </div>
+                <div class="goal-item">
+                    <h3>Circular Economy</h3>
+                    <p>Minimize waste and create valuable byproducts from banana production</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">Our Dream Team</h2>
+            <div class="section-divider"></div>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">The passionate individuals driving Nyangorora Banana Processors forward</p>
+            
+            <div class="principles">
+                <h3>Our Guiding Principles</h3>
+                <ul>
+                    <li>Provide employment to underemployed in Kisii County</li>
+                    <li>Improve livelihoods by reducing post-harvest losses</li>
+                    <li>Develop local economy by popularizing Kisii bananas</li>
+                </ul>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="askahkerubo.jpg" alt="Askah Kerubo" class="member-img">
+                    <h3>Askah Kerubo</h3>
+                    <p>CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="jacklinearori.jpg" alt="Jackline Arori" class="member-img">
+                    <h3>Jackline Arori</h3>
+                    <p>Production Manager</p>
+                </div>
+                <div class="team-member">
+                    <img src="jarednyakundi.jpg" alt="Jared Nyakundi" class="member-img">
+                    <h3>Jared Nyakundi</h3>
+                    <p>Board Chairman</p>
+                </div>
+                <div class="team-member">
+                    <img src="kennedyobuya.jpg" alt="Kennedy Obuya" class="member-img">
+                    <h3>Kennedy Obuya</h3>
+                    <p>Finance Analyst</p>
+                </div>
+                <div class="team-member">
+                    <img src="lydiabosibori.jpg" alt="Lydia Bosibori" class="member-img">
+                    <h3>Lydia Bosibori</h3>
+                    <p>Marketing</p>
+                </div>
+                <div class="team-member">
+                    <img src="rachelkwamboka.jpg" alt="Rachel Kwamboka" class="member-img">
+                    <h3>Rachel Kwamboka</h3>
+                    <p>Farm Relations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Voices of Satisfaction</h2>
+            <div class="section-divider"></div>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">Discover how Nyangorora Banana Processors is transforming businesses and lives across Kenya</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-content">
+                        <p>"NBP's banana flour has revolutionized our bakery. The consistent quality and fair pricing have helped us grow our business by 40% this year alone."</p>
+                        <div class="testimonial-author">
+                            Jane Muthoni
+                            <span>Head Baker, Artisan Bread Co. • Nairobi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-content">
+                        <p>"As a smallholder farmer, partnering with Nyangorora Banana Processors has tripled my income. Their sustainable practices ensure my land remains fertile."</p>
+                        <div class="testimonial-author">
+                            Samuel Ochieng
+                            <span>Banana Farmer • Kisii</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-content">
+                        <p>"Our customers can't get enough of NBP's products. The premium quality and unique flavor profile keep them coming back week after week."</p>
+                        <div class="testimonial-author">
+                            Amina Hassan
+                            <span>Owner, Coastal Grocers • Mombasa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <h2 class="section-title">Ready to Transform Your Business?</h2>
+            <div class="section-divider"></div>
+            <p>Join our network of satisfied customers and experience the Nyangorora difference with premium quality bananas</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Contact Our Sales Team</a>
+                <a href="#products" class="btn btn-outline">Explore Our Products</a>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Farms Trust Us</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">Customer Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Nyangorora Banana</h3>
+                    <p>Achieving economic growth through banana value chain commercialization.</p>
+                    <p>Fair Trade | Sustainability | Community Development</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> KIRDI, Kisii, Kenya</p>
+                        <p><i class="fas fa-envelope"></i> bananyango@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 0729146533 (Jared)</p>
+                        <p><i class="fas fa-phone"></i> 0733185621 (Lydiah)</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100069990820162" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/nyangorora" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/nyangorora" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/nyangorora" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Nyangorora Banana Processors, Limited. All rights reserved. Powered By sagwe Softwares</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
